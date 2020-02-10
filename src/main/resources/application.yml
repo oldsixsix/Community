@@ -1,0 +1,75 @@
+##spring.resources.static-locations=classpath:/hello/,classpath:/atguigu/
+## \u9879\u76EE\u8BBF\u95EE\u8DEF\u5F84
+##server.port=8081
+##server.context-path=/crud
+##server.tomcat.uri-encoding=UTF-8
+#
+#
+#spring.mvc.date-format=yyyy-MM-dd
+#
+## \u7981\u7528\u7F13\u5B58
+#spring.thymeleaf.cache=false
+#
+## \u56FD\u9645\u5316\u914D\u7F6E\u6587\u4EF6\uFF08\u5305\u540D.\u57FA\u7840\u540D\uFF09
+#spring.messages.basename=i18n.login
+
+
+
+
+
+#logging:
+#  level:
+#    com:
+#      community:debug
+
+#????JDBC?????
+#spring:
+#  datasource:
+#    username: root
+#    password: 123456
+#    url: jdbc:mysql://localhost/mybatisdemo
+#    driver-class-name: com.mysql.jdbc.Driver
+#    initialization-mode: always
+#    schema:
+#      - classpath:schema_2.sql
+#      - classpath:schema_1.sql
+
+#整合druid
+#spring:
+#  datasource:
+#    username: root
+#    password: 123456
+#    url: jdbc:mysql://localhost:3306/mybatisdemo
+#    driver-class-name: com.mysql.jdbc.Driver
+#    type: com.alibaba.druid.pool.DruidDataSourceC3P0Adapter
+#    initialSize: 5
+#    minIdle: 5
+#    maxActive: 20
+#    maxWait: 60000
+#    timeBetweenEvictionRunsMillis: 60000
+#    minEvictableIdleTimeMillis: 300000
+#    validationQuery: SELECT 1 FROM DUAL
+#    testWhileIdle: true
+#    testOnBorrow: false
+#    testOnReturn: false
+#    poolPreparedStatements: true
+#    #???ü??????????filters????????????sql???????'wall'????????
+#    filters: stat,wall,log4j
+#    maxPoolPreparedStatementPerConnectionSize: 20
+#    useGlobalDataSourceStat: true
+#    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+      #     更新或者创建数据表结构
+#整合jpa
+#1.配置数据源JDBC
+#2.配置jpa
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost/mybatisdemo
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+#      更新或者创建数据表结构
+      ddl-auto: create
+    show-sql: true
